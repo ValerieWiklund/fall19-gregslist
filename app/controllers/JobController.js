@@ -1,5 +1,5 @@
 import JobService from "../services/JobService.js";
-import Car from "../models/Car.js";
+
 
 let _jobService = new JobService()
 
@@ -11,20 +11,12 @@ function _draw() {
   let template = ""
   let jobs = _jobService.Jobs
 
-  jobs.forEach(job) => {
-    template += jobs.template
-  }
+  jobs.forEach(job => {
+    template += job.Template
+  })
 
-
+  document.querySelector("#jobs").innerHTML = template
 }
-
-
-
-
-
-
-
-
 
 
 
@@ -35,6 +27,25 @@ function _draw() {
 export default class JobController {
   constructor() {
     console.log("Job Controller checking in");
+    _draw()
+  }
+
+
+  //map incoming form fields to the correct fields
+  addJob(event) {
+    event.prevent.default();
+    let form = event.target;
+
+    let newJob = {
+      position: form.position.value,
+      company: form.position.value,
+      description: form.description.value,
+      contact: form.contact.value,
+      wage: form.wage.value
+    }
+
+    _jobService.addJob(newJob)
+    _draw()
   }
 
 }

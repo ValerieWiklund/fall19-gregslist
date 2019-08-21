@@ -19,8 +19,13 @@ let _state = {
 
 export default class JobService {
   constructor() {
-
     console.log("jobService checking in");
+
+  }
+
+  addJob(newJob) {
+    _state.jobs.push(new Job(newJob))
+    console.log(_state.jobs)
   }
 
   get Jobs() {

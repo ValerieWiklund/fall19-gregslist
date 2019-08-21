@@ -11,12 +11,12 @@ export default class Job {
 
   get Template() {
     return `
-    <div class="col-4">
+    <div class="col-4 border">
     <h1>${this.position}</h1>
     <h3>${this.company}</h3>
     <p>${this.description}</p>
     <p>${this.contact}</p>
-    <p>${this.wage}</p>
+    <p>Wage/Salary: $ ${this.wage}</p>
     </div>`
   }
 }
