@@ -33,16 +33,18 @@ export default class JobController {
 
   //map incoming form fields to the correct fields
   addJob(event) {
-    event.prevent.default();
+
+    event.preventDefault();
     let form = event.target;
 
     let newJob = {
       position: form.position.value,
-      company: form.position.value,
+      company: form.company.value,
       description: form.description.value,
       contact: form.contact.value,
       wage: form.wage.value
     }
+
 
     _jobService.addJob(newJob)
     _draw()
