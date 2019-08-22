@@ -50,4 +50,10 @@ export default class JobController {
     _draw()
   }
 
+  // delete job listing by index
+  deleteJob(index) {
+    _jobService.deleteJob(index)
+    _draw()
+  }
+
 }

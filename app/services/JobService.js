@@ -23,9 +23,18 @@ export default class JobService {
 
   }
 
+  // add a new job listing to the jobs state
+
   addJob(newJob) {
     _state.jobs.push(new Job(newJob))
     console.log(_state.jobs)
+  }
+
+
+  // delete a job listing 
+
+  deleteJob(index) {
+    _state.jobs.splice(index, 1)
   }
 
   get Jobs() {
