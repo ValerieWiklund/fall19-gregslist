@@ -4,42 +4,32 @@ let _state = {
   jobs: [new Job({
     position: "Administrative Assistant",
     company: "Page One Power",
-    description: "Do all the paperwork for all members of two different teams. Be organized and know Excel.",
-    wage: 18,
-    contact: "hrrecruiter@pageonepower.com"
+    description: "Do all the paperwork",
+    wage: 16,
+    contact: "hrrecruited@pageonepower.com"
   })]
 }
 
 
 
-
-//public
-
-
-
 export default class JobService {
   constructor() {
-    console.log("jobService checking in");
-
+    console.log("JobService checking in")
   }
 
-  // add a new job listing to the jobs state
+  deleteJob(index) {
+    _state.jobs.splice(index, 1)
+  }
 
   addJob(newJob) {
     _state.jobs.push(new Job(newJob))
-    console.log(_state.jobs)
   }
 
 
-  // delete a job listing 
+  get Job() {
 
-  deleteJob(id) {
-    for (let i = 0; i <)
-      _state.jobs.splice(index, 1)
-  }
+    return _state.jobs.map(job => new Job(job))
 
-  get Jobs() {
-    return _state.jobs.map(job => new Job(job));
   }
 
 }
