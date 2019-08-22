@@ -33,8 +33,9 @@ export default class JobService {
 
   // delete a job listing 
 
-  deleteJob(index) {
-    _state.jobs.splice(index, 1)
+  deleteJob(id) {
+    for (let i = 0; i <)
+      _state.jobs.splice(index, 1)
   }
 
   get Jobs() {
